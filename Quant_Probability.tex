@@ -1,0 +1,350 @@
+\documentclass{scrartcl}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{parskip}
+\usepackage{graphicx, xcolor}
+\usepackage[most]{tcolorbox}
+
+\tcbset{
+  theorem style/.style={
+    enhanced,
+    breakable,
+    colback=#1!5,      % background
+    colframe=#1!60,    % border
+    boxrule=0.5pt,
+    arc=2pt,
+    left=6pt,right=6pt,top=4pt,bottom=4pt
+  }
+}
+
+\definecolor{thmblue}{HTML}{3A6EA5}      % calm academic blue
+\definecolor{defpurple}{HTML}{6B4E9B}    % definition = conceptual
+\definecolor{examber}{HTML}{B07C2C}      % examples = warm + applied
+\definecolor{probgray}{HTML}{555555}     % neutral problems
+\definecolor{remolive}{HTML}{6A7F2A}     % remarks = side info
+\definecolor{solteal}{HTML}{2F8F83}      % solutions = resolution
+\definecolor{propindigo}{HTML}{3F4C81}   % propositions = formal
+
+\newtcbtheorem[number within=section]{theorem}{Theorem}%
+  {theorem style=thmblue}{thm}
+
+\newtcbtheorem[number within=section]{definition}{Definition}%
+  {theorem style=defpurple}{def}
+
+\newtcbtheorem[number within=section]{example}{Example}%
+  {theorem style=examber}{ex}
+
+\newtcbtheorem{problem}{Problem}%
+  {theorem style=probgray}{prob}
+
+\newtcbtheorem[number within=section]{remark}{Remark}%
+  {theorem style=remolive}{remk}
+
+\newtcbtheorem[number within=section]{solution}{Solution}%
+  {theorem style=solteal}{sol}
+
+\newtcbtheorem[number within=section]{proposition}{Proposition}%
+  {theorem style=propindigo}{prop}
+
+\title{Quant Probability Notes}
+\author{Dhruv Ajmera}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\clearpage
+
+\section{Random Walks, Markov Chains}
+
+\subsection{Symmetry}
+In any scenario where there is no 'drift' present in our system, equal outcomes have equal probability of occurring.
+
+\begin{example}{Point on Number Line}
+.A point sits at $0$ on the number line. Each iteration, it has a $\frac{1}{3}$ chance of moving 1 unit to the left, a $\frac{1}{3}$ chance of moving 1 unit to the right, and a $\frac{1}{3}$ chance of staying in place. This process ends when the point reaches either $-4$ or $4$. What is the probability that it reaches $4$ first?
+
+\end{example}
+
+\begin{proof}
+Since there is no bias toward any particular side and all distances are symmetrical, the probability must be $P = \frac{1}{2}$.
+\end{proof}
+
+In many cases, a seemingly complex problem can be quickly solved using this notion of symmetry. But how would we solve this problem otherwise?
+\subsection{Identifying Recurrence Structures}
+\begin{proof}
+Denote the probability of success at point $i$ as $P_i$. Then,
+\[
+P_i = \frac{P_i}{3} + \frac{P_{i-1}}{3} + \frac{P_{i+1}}{3}, 
+\]
+\[
+P_{i+1} - P_i = P_i - P_{i-1}.
+\]
+Since the change between each probability is constant, we know that $P_i$ must be a linear function. Thus,
+\[
+P_i = Ai + B.
+\]
+From our boundary conditions, $P_{-4} = 0, P_4 = 1$, we get
+\[
+0 = -4A + B,
+\]
+\[
+1 = 4A + B,
+\]
+\[
+A = \frac{1}{8},B = \frac{1}{2}.
+\]
+Thus, we can calculate
+\[
+P_0 = \frac{1}{8}(0) + \frac{1}{2} = \frac{1}{2},
+\]
+as desired.
+\end{proof}
+Now, we can define some important terms.
+
+\begin{definition}{First Discrete Derivative}
+.For a sequence $f_i$, we have the first discrete derivative, denoted $\Delta f_i = f_{i+1}-f_i$.
+\end{definition}
+
+\begin{definition}{Second Discrete Derivative}
+.For a sequence $f_i$, we have the second discrete derivative, denoted $\Delta^2f_i = (f_{i+1}-f_i) - (f_i - f_{i-1}) = f_{i+1} - 2f_i + f_{i-1}$.
+\end{definition}
+
+Just as before, if a sequence's first derivative is constant, it must be linear. If it's second derivative is constant, it must be quadratic and so on.
+
+\begin{example}{Point on Number Line (Cont.)}
+.In the same setup as before, calculate the expected number of iterations to reach $4$.
+\end{example}
+
+\begin{proof}
+Denote the expected number of iterations at $i$ with $E_i$. Then,
+\[
+E_i = 1 + \frac{E_i}{3} + \frac{E_{i-1}}{3} + \frac{E_{i+1}}{3},
+\]
+\[
+E_{i+1} - 2E_i + E_{i-1} = -3,
+\]
+\[
+\Delta^2 E_i = -3.
+\]
+Thus, we know that $E_i$ is a quadratic function. Now, if $f^h$ is a homogeneous solution of our equation and $f^p$ is an associated particular solution, then every complete solution is $f = f^h + f^p$. Thus, we first test $f^p = Ci^2$:
+\[
+C(i+1)^2 - 2Ci^2 + C(i-1)^2 = -3,
+\]
+\[
+2C = -3,
+\]
+\[
+C = \frac{-3}{2}.
+\]
+Now, we can find the homogeneous solution. Since we know that the second derivative is equal to 0, it must be linear:
+\[
+A(i+1) - 2Ai + A(i-1) + B - 2B + B = 0,
+\]
+which is clearly true. Thus, we can utilize our boundary conditions $E_{-4}=0, E_4 = 0$ on the equation $E_i = -\frac{3}{2}i^2 + Ai + B$ to find that
+\[
+A=0,B=24.
+\]
+Thus, $E_i = 24 - \frac{3}{2}i^2$, and
+\[
+E_0 = 24,
+\]
+as desired.
+\end{proof}
+
+There is also a general solution for expectation if the random walk is symmetric with no stationary probability.
+
+\begin{remark}{Expectation of Symmetric, Non-Stationary Walk}
+.The expected number of steps/iterations to reach a boundary $N$ units away is $\propto N^2$, and strictly equal to $N^2$ when the walk is non-lazy, symmetric and only transitions to nearest neighbors.
+\end{remark}
+
+\begin{example}{Point on Dodecagon}
+.Every second, a point on a vertex of a Dodecagon has a $\frac{1}{2}$ probability of moving one vertex counterclockwise and an equal probability of moving one vertex clockwise. What is the expected number of seconds for it to reach the diametrically opposite vertex?
+\end{example}
+
+\begin{proof}
+The diametrically opposite vertex would require $6$ movements in any given direction. Thus, the expected number of seconds is $6^2=36$.
+\end{proof}
+
+\subsection{Solving Walks with Drift}
+
+For the purposes of using discrete calculus, we will assume that all transitions preserve locality (e.g. our object can only move to states adjacent to its current state).
+
+However, we must first define what drift is.
+
+\begin{definition}{Drift}
+.A Random Walk has \textbf{drift} if the transition probabilities to different states are not equivalent (e.g. our object `prefers' one transition state over another).
+\end{definition}
+
+With this, we introduce the formula for calculating the probability and expectation of such walks.
+
+\begin{proposition}{Probability and Expectation with Drift}
+.Assuming a state space of integers $i \in \mathbb Z$, we define our transitions as follows:
+  \begin{itemize}
+    \item move right to $i+1$ with probability $p$,
+    \item move left to $i-1$ with probability $q$,
+    \item remain in place with probability $r$,
+  \end{itemize}
+such that $p+q+r=1,\ p\neq q$. If we let $P_i$ be the probability of hitting the right boundary before the left and $E_i$ be the expected time to absorption from the $i$th state, then
+\[
+P_i = A + B\left(\frac{q}{p}\right)^{i-1},
+\]
+\[
+E_i = A + B\left(\frac{q}{p}\right)^{i-1} - \frac{i}{p-q}.
+\]
+\end{proposition}
+
+\begin{proof}
+We prove each in order.
+
+Given our probabilities, we can write
+\[
+P_i = pP_{i+1} + qP_{i-1} + rP_i,
+\]
+\[
+P_i = pP_{i+1} + qP_{i-1} + (1-p-q)P_i,
+\]
+\[
+p(P_{i+1}-P_i) = q(P_i - P_{i-1}),
+\]
+\[
+p \Delta P_{i+1} = q \Delta P_i,
+\]
+\[
+\Delta P_{i+1} = \frac{q}{p} \Delta P_i,
+\]
+\[
+\Delta P_i = C \left(\frac{q}{p}\right)^{i-1},
+\]
+\[
+P_i = A + B\left(\frac{q}{p}\right)^{i-1},
+\]
+since the first discrete derivatives form a geometric sequence.
+
+We can derive an expression for the expectation similarly. Write
+\[
+E_i = 1 + pE_{i+1} + qE_{i-1} + rE_i,
+\]
+\[
+p(E_{i+1}-E_i) - q(E_i - E_{i-1}) = -1.
+\]
+As before, we separate the homogeneous equation. Thus, we first solve
+\[
+p(E_{i+1}-E_i) - q(E_i - E_{i-1}) = 0,
+\]
+which has the exact same form as our probability equation. Thus,
+\[
+f^h = A + B\left(\frac{q}{p}\right)^{i-1}.
+\]
+Now, we must find $f^p$ and add it to our homogeneous solution. Since the right hand side is a constant, we use a linear function (as this is analogous to the `second difference' being a constant):
+\[
+f^p = Ci,
+\]
+\[
+p(C(i+1) - Ci) - q(Ci - C(i-1)) = -1,
+\]
+\[
+C(p-q) = -1,
+\]
+\[
+C = -\frac{1}{p-q}.
+\]
+Thus, our total solution is $f = f^h + f^p$:
+\[
+E_i = A + B\left(\frac{q}{p}\right)^{i-1} - \frac{i}{p-q}.
+\]
+As before, we solve for the constants using our absorption conditions. This creates a solvable system of equations with two equations and two variables. Thus, an explicit formula can be obtained.
+\end{proof}
+
+\begin{remark}{Memorizations}
+.Any random walk that fulfills the aforementioned conditions will always have this form for its probability and expectation. Concretely, there are two cases.
+
+\begin{enumerate}
+  \item Symmetric Walk
+    \begin{itemize}
+      \item Probability: \(P_i = Ai+B\)
+      \item Expectation: \(E_i = Ci^2 + Ai + B\)
+    \end{itemize}
+  \item Drifted Walk
+    \begin{itemize}
+      \item Probability: \(P_i = A + B\left(\frac{q}{p}\right)^{i-1}\)
+      \item Expectation: \(E_i = A + B\left(\frac{q}{p}\right)^{i-1} - \frac{i}{p-q}\)
+    \end{itemize}
+\end{enumerate}
+\end{remark}
+
+\section{Counting With a Deck of Cards}
+\subsection{Combinatorial Approaches}
+Often times, it can be more beneficial to calculate probability as a proportion of all total outcomes.
+\begin{example}{Nondecreasing sequence}
+.We take 3 cards from a deck of 52, where $A=1,2=2,\dots K=13$. Disregarding the ordering of suits, what is the probability that the sequence of cards is in non-decreasing order? (Each successive card is at least the value of the previous card).
+\end{example}
+
+\begin{proof}
+Since we are looking at sequences, it is clear that order matters. Thus, the total number of 3-card sequences is
+\[
+52 \times 51 \times 50 = 132600.
+\]
+Now, there are three possible cases for our nondecreasing sequence.
+\begin{enumerate}
+    \item All 3 cards are the same rank
+    
+    In this case, there are 13 choices for the rank, and we can choose an ordered triple of distinct suits $4 \times 3 \times 2$ ways. Thus, there are $13 \times 24 = 312$ combinations.
+
+    \item Two cards have the same rank, third card is different rank
+    
+    In this case, 
+\end{enumerate}
+
+\end{proof}
+
+
+\section{Compendium of Problems}
+
+\subsection{Random Walks, Markov Chains}
+
+\begin{problem}{Point on Number Line}
+.A point begins at 0 on the number line. Each second, a coin is flipped. If it is tails, the point moves 1 unit to the left. If it is heads, it moves one unit to the right. This game ends when the point reaches either $-5$ or $5$.
+
+\begin{itemize}
+    \item What is the probability that we reach $5$ before $-5$?
+    \item What is the expected number of seconds to reach $5$?
+\end{itemize}
+\end{problem}
+
+\begin{problem}{Point in Grid}
+.A point is at the center of a $10\times 10$ grid. Every second, there is a $1/4$ chance of moving one unit in each cardinal direction. This walk ends when the point reaches any edge of the grid. What is the expected number of seconds for this to occur?
+\end{problem}
+
+\begin{problem}{Points on Octagon}
+.There are two points on diametrically opposite vertices of an Octagon. Every second, each point has a $\frac{1}{2}$ chance to move one vertex clockwise and an equivalent chance of moving one vertex counterclockwise. What is the expected number of seconds until they meet?
+\end{problem}
+
+\begin{problem}{Point on Decagon}
+.A point is at a vertex of a Decagon. Every second, it has a $\frac{1}{3}$ chance of moving one vertex counterclockwise and an equivalent chance to move counterclockwise, with the remaining probability indicating that it remains still. What is the expected time for this point to reach the diametrically opposite vertex?
+\end{problem}
+
+\subsection{Misc. Expected Value}
+
+\begin{problem}{Dice Rolling}
+.A fair dice is rolled continuously until the same number appears twice consecutively. 
+
+\begin{itemize}
+    \item What is the expected value of the sum of all previous rolls?
+    \item What is the expected value of the product of all previous rolls?
+\end{itemize}
+\end{problem}
+
+\subsection{Combinatorial Probability}
+
+\subsubsection{Restricted Positions}
+
+\begin{problem}{Deck of Cards}
+.Three cards are chosen from a standard deck of $52$, where $A=1,2=2,\dots ,K=13$. What is the probability that the three numbers obtained through this process all differ from each other by at least two?
+\end{problem}
+
+
+\section{Solutions to Problems}
+
+\end{document}

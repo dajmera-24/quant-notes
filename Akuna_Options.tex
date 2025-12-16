@@ -1,0 +1,61 @@
+\documentclass{scrartcl}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{parskip}
+\usepackage{graphicx, xcolor}
+\usepackage[most]{tcolorbox}
+
+\tcbset{
+  theorem style/.style={
+    enhanced,
+    breakable,
+    colback=#1!5,      % background
+    colframe=#1!60,    % border
+    boxrule=0.5pt,
+    arc=2pt,
+    left=6pt,right=6pt,top=4pt,bottom=4pt
+  }
+}
+
+\definecolor{thmblue}{HTML}{3A6EA5}      % calm academic blue
+\definecolor{defpurple}{HTML}{6B4E9B}    % definition = conceptual
+\definecolor{examber}{HTML}{B07C2C}      % examples = warm + applied
+\definecolor{probgray}{HTML}{555555}     % neutral problems
+\definecolor{remolive}{HTML}{6A7F2A}     % remarks = side info
+\definecolor{solteal}{HTML}{2F8F83}      % solutions = resolution
+\definecolor{propindigo}{HTML}{3F4C81}   % propositions = formal
+
+\newtcbtheorem[number within=section]{theorem}{Theorem}%
+  {theorem style=thmblue}{thm}
+
+\newtcbtheorem[number within=section]{definition}{Definition}%
+  {theorem style=defpurple}{def}
+
+\newtcbtheorem[number within=section]{example}{Example}%
+  {theorem style=examber}{ex}
+
+\newtcbtheorem{problem}{Problem}%
+  {theorem style=probgray}{prob}
+
+\newtcbtheorem[number within=section]{remark}{Remark}%
+  {theorem style=remolive}{remk}
+
+\newtcbtheorem[number within=section]{solution}{Solution}%
+  {theorem style=solteal}{sol}
+
+\newtcbtheorem[number within=section]{proposition}{Proposition}%
+  {theorem style=propindigo}{prop}
+
+\title{Akuna Options 101 Notes}
+\author{Dhruv Ajmera}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\clearpage
+
+
+\end{document}
