@@ -1,8 +1,8 @@
 # Fdb version 4
-["pdflatex"] 1765940092.01333 "c:/Users/dhruv/quant-notes/quant-notes/Akuna_Options.tex" "Akuna_Options.pdf" "Akuna_Options" 1765940094.16115 0
-  "Akuna_Options.aux" 1765940093 1116 d1841ce2450dbfb5d526222222af7f5a "pdflatex"
-  "Akuna_Options.tex" 1765940083 3945 fad163c9c7fa7aa7f89e1c3090f25767 ""
-  "Akuna_Options.toc" 1765940093 244 9eab0dd578f0aa1409a3968dfdf2295c "pdflatex"
+["pdflatex"] 1765946574.18886 "c:/Users/dhruv/quant-notes/quant-notes/Akuna_Options.tex" "Akuna_Options.pdf" "Akuna_Options" 1765946577.08798 0
+  "Akuna_Options.aux" 1765946576 1541 d1ceae273d214f304c1928c43ded9c8b "pdflatex"
+  "Akuna_Options.tex" 1765946569 5728 de45839072184e6cb549e6d94c1a913a ""
+  "Akuna_Options.toc" 1765946576 244 9eab0dd578f0aa1409a3968dfdf2295c "pdflatex"
   "C:/Users/dhruv/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1765926440 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/dhruv/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1095.pk" 1765940089 12668 d2ff3e02d9a76c987bd9ecb12c9779f2 ""
   "C:/Users/dhruv/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1765925949 24225047 e68ecd9bd9d7b4ff14c5b72e3d274390 ""
@@ -172,7 +172,7 @@
   "C:/Users/dhruv/AppData/Local/Programs/MiKTeX/tex/latex/trimspaces/trimspaces.sty" 1253169183 1380 971a51b00a14503ddf754cab24c3f209 ""
   "C:/Users/dhruv/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1700127522 55487 80a65caedd3722f4c20a14a69e785d8f ""
   "C:/Users/dhruv/AppData/Local/Programs/MiKTeX/tex/latex/xpatch/xpatch.sty" 1585221260 8510 7803f78066c4f9d008405191a4b43073 ""
-  "c:/Users/dhruv/quant-notes/quant-notes/Akuna_Options.tex" 1765940083 3945 fad163c9c7fa7aa7f89e1c3090f25767 ""
+  "c:/Users/dhruv/quant-notes/quant-notes/Akuna_Options.tex" 1765946569 5728 de45839072184e6cb549e6d94c1a913a ""
   (generated)
   "Akuna_Options.aux"
   "Akuna_Options.log"
