@@ -2,6 +2,7 @@
 \usepackage{amsmath, amssymb, amsthm}
 \usepackage{parskip}
 \usepackage{graphicx, xcolor}
+\usepackage{gensymb}
 \usepackage[most]{tcolorbox}
 
 \tcbset{
@@ -57,5 +58,107 @@
 
 \clearpage
 
+\section{Terminology}
+
+We provide some basic terminology underlying options.
+
+\subsection{Basics}
+
+\begin{definition}{Bid}
+.The Bid is the (highest) price for which someone is willing to buy something.
+\end{definition}
+
+\begin{definition}{Offer}
+.The Offer is the (lowest) price at which someone is willing to sell something.
+\end{definition}
+
+\begin{definition}{Size}
+.The Size is the amount of contracts one is willing to trade at a price.
+\end{definition}
+
+\begin{remark}{Cushion}
+.One tends to include a 'cushion' between the expected value and bid/offer.
+\end{remark}
+
+The idea of `market making' is thus providing bid, ask and sizes for each.
+
+\begin{example}{Temperature Betting}
+.The expected temperature tomorrow is $64 \degree$. If one were to offer 4 bid contracts at $60 \degree$ and 10 offer contracts at $68 \degree$, then they are `60 bid for 4 and have 10 at 68'; `60 at 68, 4 by 10'.
+\end{example}
+
+\begin{definition}{Spread}
+.The Spread is the difference between the bid and ask price.
+\end{definition}
+
+\begin{definition}{Hedge}
+.A trade or investment to reduce the risk of price movement in an asset (e.g. if we bet on a team to win, we `hedge' this bet by making secondary bets against points, halftime score, 3 point \%, etc.).
+\end{definition}
+
+\begin{definition}{Paper}
+.Interested parties trading against the market makers.
+\end{definition}
+
+\begin{definition}{Broker}
+.An intermediary between buyers and sellers.
+\end{definition}
+
+\begin{definition}{Tick Size}
+.The increment between one level and the next level (Stock goes from 100.00 \textrightarrow 100.1 indicates tick size of 0.01).
+\end{definition}
+
+\begin{definition}{Queue Priority}
+.A structure used to determine the right of precedence within those in a list (commonly Price-time priority \textrightarrow separate orders into price bands, and then organize by time of request with highest bidders on top).
+\end{definition}
+
+\begin{definition}{Spread}
+.The Spread is the difference between the bid and ask price.
+\end{definition}
+
+\subsection{Order Types}
+
+\begin{definition}{Immediate or Cancel}
+.(IOC) A type of order that requires all or part of the order to be executed immediately. Unfulfilled parts of order are cancelled.
+\end{definition}
+
+For example, if we have 100 bid for 24 contracts, and an IOC order to sell 50 at 100 is recieved \textrightarrow we sold 24 at 100 and the remaining 26 are cancelled (can only exec. at any price at or above your offer, for a qty. upto your size)
+
+\begin{definition}{Good for Day}
+.(GFD) This order remains until executed or until end of trading day.
+\end{definition}
+
+\begin{definition}{Good-til-cancelled}
+.(GTC) This order remains until cancelled or completed.
+\end{definition}
+
+\begin{definition}{All or None}
+.(AON) Must be executed in its entirety, or not executed at all (more uncommon).
+\end{definition}
+
+\begin{definition}{Fill or Kill}
+.(FOK) Must be executed immediately in its entirety, otherwise cancelling (few seconds in floor trading).
+\end{definition}
+
+Note that Fill and Kill (FAK) = IOC.
+
+\begin{definition}{One cancels the other}
+.(OCO) When one order is executed, the other is cancelled (used to prevent over-exposure).
+\end{definition}
+
+\begin{definition}{Contract Size}
+.The multiplier attached to an option or future. Options on stock generally have a multiplier of 100 shares. Options on futures have a multiplier of 1 future. The multiplier on options on a future and the multiplier on the future can vary.
+\end{definition}
+
+
+\begin{definition}{Theoretical Value}
+.(Theo) based on all inputs, the current value a market maker believes an option is worth.
+\end{definition}
+
+\begin{definition}{Sheets}
+.(Fair Value) same as above, but generally when referring to where something traded.
+\end{definition}
+
+\begin{definition}{Liquidity}
+.(Fair Value) how easy/hard it is to trade close to fair value. Generally determined by the number on contracts on the bid/offer, along with the width of the market.
+\end{definition}
 
 \end{document}
