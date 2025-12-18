@@ -161,4 +161,44 @@ Note that Fill and Kill (FAK) is synonymous to IOC.
 .(Fair Value) how easy/hard it is to trade close to fair value. Generally determined by the number on contracts on the bid/offer, along with the width of the market.
 \end{definition}
 
+\section{Profit Mechanisms}
+
+One primary profit mechanism is pocketing the bid-ask spread. The market maker calculates the value for an option and \textbf{disseminates} a bid below this value and an offer above this value to the market.
+
+But how can one sell an asset they do not own?
+
+An options contract is created when two parties agree to interact \textrightarrow it is a promise to deliver what is being optioned at a later date. There are a few outcomes when the buyer exercises the option:
+
+\begin{itemize}
+  \item Stock Option: deliver (buy) the underlying shares of stock 
+  \item Cash Settled Option: debit the cash from ones account to pay the buyer for the difference between the transaction price and the settlement price
+  \item Future Settled Option: deliver a \textbf{future} (underlying contract created when traded vs another party). The seller and buyer of a future transact at some specified price (if option, strike price).
+
+\end{itemize}
+
+\begin{definition}{Co-location}
+.Having servers located at various data centers run by an exchange; saves nanoseconds when the market maker is sending and amending quites and orders to the exchange's matching-engine.
+\end{definition}
+
+\begin{remark}{OTC Trades}
+.OTC (Over the Counter) trades occur off-floor, directly between two parties. These trades have significantly more counterparty risk then exchange listed contracts (no guarantee that the other party/firm will honor their contract or has sufficient funds).
+\end{remark}
+
+In contrast, for this to occur when trading on an exchange, the opposing entity, its clearing company, AND the exchange would need to default on the trade.
+
+Options on futures are regulated and governed by the Commodity Futures Trading Commission (CFTC) while options on equities are regulated by the Securities and Exchange Commission (SEC).
+
+There are two main exhanges upon which options on futures are traded:
+
+\begin{itemize}
+  \item CME Group: COMEX (metals), NYMEX (energy), CBOT (grains, treasures), CME (currencies, Eurodollars, SP500, livestock),
+  \item ICE: Brent \& WTI Oil, sugar, coffee, cocoa, OJ, Russell 2000 index, USD index
+
+\end{itemize}
+
+\subsection{Forward Contract}
+
+Used to hedge unpredictability in profits. Two parties agree ahead of time to transact at a specified price (Apple farmer and pie chain). This prevents vol due to unexpected prices. Formally, an obligation to transact in the future at a specified price. (producers and consumers)
+
+The exchange stands to profit off these futures contracts (by taking on the counterparty risk) \textrightarrow essentially playing the middleman by creating a contract with other parties and pocketing the edge. Requires other parties to set aside margins to further protect against losses.
 \end{document}
