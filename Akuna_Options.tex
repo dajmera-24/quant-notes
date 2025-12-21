@@ -201,4 +201,39 @@ There are two main exhanges upon which options on futures are traded:
 Used to hedge unpredictability in profits. Two parties agree ahead of time to transact at a specified price (Apple farmer and pie chain). This prevents vol due to unexpected prices. Formally, an obligation to transact in the future at a specified price. (producers and consumers)
 
 The exchange stands to profit off these futures contracts (by taking on the counterparty risk) \textrightarrow essentially playing the middleman by creating a contract with other parties and pocketing the edge. Requires other parties to set aside margins to further protect against losses.
+
+\section{Options}
+
+\begin{definition}{Call}
+.A call option is the right, but not the oblifation to buy the asset for a specified price (strike price) on or before a specified expiration date.
+\end{definition}
+
+\begin{definition}{Call}
+.A put option is the right, but not the oblifation to sell the asset for a specified price (strike price) on or before a specified expiration date.
+\end{definition}
+
+Note that `theo' is a subjective theoretical value calculated by the specific market maker, determining whether or not they will participate in selling/buying contracts at this specific strike price.
+
+\begin{definition}{Turnover Quantity}
+.This is the total contracts traded in the current day.
+\end{definition}
+
+Bid offset is the required edhe around the `theo' value in order to auto-trade the option. Note that bid offset = ask offset.
+
+Important greeks include spline delta and vega.
+
+Tick sizes and multipliers vary based on the future being traded. Generally, profit = ticks made * tick size * multiplier, where ticks made = contracts * indiv. ticks made.
+
+Furthermore, options typically have a multipler ONTO the underlying stock/future. For stocks, it is 100 and for futures it is 1. (You must further multiply this value).
+
+\begin{remark}{Edge vs Cash}
+.Oftentimes, trades will be discussed in terms of edge in points (ticks) vs the current theo. (more applicable for options). 1.00 \textrightarrow 1.04 implies making 4 cents of edge. If ticks are in pennies, then it is also 4 ticks of edge.
+\end{remark}
+
+To translate this edge to cash, we do multiplier * contracts * edge; in prev. example with a multipier of 1000, $\text{profit} = 0.04 * 1000 * 20 = 800$ in theoretical profit (vs current theo).
+
+\section{Electronic Markets}
+
+Any operation requiring speed is sent through servers located close to the matching engine of an exchange. This includes IOC orders, pre-calculated values, and FPGAs. Traders interact with the server that then interacts with the matching engine; they change things that require less speed (settings, params, quotes on/off). The Clearing Firm is also connected, which holds trades, does accounting, and communicates with the Clearing House. The Clearing House matches trades between clearing firms (between all different market participants).
+
 \end{document}

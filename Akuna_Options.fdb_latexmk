@@ -1,8 +1,8 @@
 # Fdb version 4
-["pdflatex"] 1766009703.87941 "c:/Users/dhruv/quant-notes/quant-notes/Akuna_Options.tex" "Akuna_Options.pdf" "Akuna_Options" 1766009706.19186 0
-  "Akuna_Options.aux" 1766009705 1843 59d7fe282b4a3f9428a53d83467ec19c "pdflatex"
-  "Akuna_Options.tex" 1766009700 8538 ab1094a1d0907af6920ed03553d384f3 ""
-  "Akuna_Options.toc" 1766009705 376 555798535b42854715bd82ef27cf3325 "pdflatex"
+["pdflatex"] 1766351980.46038 "c:/Users/dhruv/quant-notes/quant-notes/Akuna_Options.tex" "Akuna_Options.pdf" "Akuna_Options" 1766351983.09032 0
+  "Akuna_Options.aux" 1766351982 2214 c67682e00f700b9f235e3db7feac5bb8 "pdflatex"
+  "Akuna_Options.tex" 1766351977 10860 084a81e6d4abc25a8310ed4115257241 ""
+  "Akuna_Options.toc" 1766351982 495 28494bb5f883d414614498f4f229c609 "pdflatex"
   "C:/Users/dhruv/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1766000409 80937 91001db6d4ae332437b4b739862cda02 ""
   "C:/Users/dhruv/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1095.pk" 1765940089 12668 d2ff3e02d9a76c987bd9ecb12c9779f2 ""
   "C:/Users/dhruv/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1765925949 24225047 e68ecd9bd9d7b4ff14c5b72e3d274390 ""
@@ -29,9 +29,11 @@
   "C:/Users/dhruv/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmsy6.tfm" 1136765053 1116 933a60c408fc0a863a92debe84b2d294 ""
   "C:/Users/dhruv/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmsy8.tfm" 1136765053 1120 8b7d695260f3cff42e636090a8002094 ""
   "C:/Users/dhruv/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb" 1247596666 34811 78b52f49e893bcba91bd7581cdc144c0 ""
+  "C:/Users/dhruv/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb" 1247596667 36299 5f9df58c2139e7edcf37c8fca4bd384d ""
   "C:/Users/dhruv/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1247596667 35752 024fb6c41858982481f6968b5fc26508 ""
   "C:/Users/dhruv/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb" 1247596667 32722 d7379af29a190c3f453aba36302ff5a9 ""
   "C:/Users/dhruv/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmssbx10.pfb" 1247596666 28902 2f5c04fd2884d1878057baa5aad22765 ""
+  "C:/Users/dhruv/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1247596667 32569 5e5ddc8df908dea60932f3c484a54c0d ""
   "C:/Users/dhruv/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb" 1247596667 32626 5abc8bb2f28aa647d4c70f8ea38cc0d3 ""
   "C:/Users/dhruv/AppData/Local/Programs/MiKTeX/tex/context/base/mkii/supp-pdf.mkii" 1580390158 71627 94eb9990bed73c364d7f53f960cc8c5b ""
   "C:/Users/dhruv/AppData/Local/Programs/MiKTeX/tex/generic/iftex/iftex.sty" 1643997108 7237 bdd120a32c8fdb4b433cf9ca2e7cd98a ""
@@ -174,7 +176,7 @@
   "C:/Users/dhruv/AppData/Local/Programs/MiKTeX/tex/latex/trimspaces/trimspaces.sty" 1253169183 1380 971a51b00a14503ddf754cab24c3f209 ""
   "C:/Users/dhruv/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1700127522 55487 80a65caedd3722f4c20a14a69e785d8f ""
   "C:/Users/dhruv/AppData/Local/Programs/MiKTeX/tex/latex/xpatch/xpatch.sty" 1585221260 8510 7803f78066c4f9d008405191a4b43073 ""
-  "c:/Users/dhruv/quant-notes/quant-notes/Akuna_Options.tex" 1766009700 8538 ab1094a1d0907af6920ed03553d384f3 ""
+  "c:/Users/dhruv/quant-notes/quant-notes/Akuna_Options.tex" 1766351977 10860 084a81e6d4abc25a8310ed4115257241 ""
   (generated)
   "Akuna_Options.aux"
   "Akuna_Options.log"
